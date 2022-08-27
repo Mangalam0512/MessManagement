@@ -1,8 +1,7 @@
 // import modules
 import express from "express";
 import dotenv from "dotenv";
-import homeRouter from "./routes/home";
-import userRouter from "./routes/user";
+import userRouter from "./routes/user.route";
 
 // read
 dotenv.config();
@@ -15,7 +14,6 @@ const app: express.Application = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/home", homeRouter);
 app.use("/user", userRouter);
 
 // use listen function to start the server
